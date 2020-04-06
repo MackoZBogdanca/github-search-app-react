@@ -8,6 +8,7 @@ const Form = ({ setSearch, setInput, input }) => {
         onSubmit={e => {
           setSearch(input);
           e.preventDefault();
+          setInput("");
         }}
       >
         <input

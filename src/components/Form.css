@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
+}
+
+.input {
+  border: black solid 3px;
+  min-width: 300px;
+  min-height: 30px;
+  background-color: #f7941f;
+}
+
+.button {
+  margin-left: 3em;
+  border: black solid 3px;
+  background-color: #f7941f;
+}
+
+.button:hover {
+  cursor: pointer;
+}

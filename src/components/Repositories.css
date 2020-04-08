@@ -1,0 +1,29 @@
+.results {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.elements {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.item {
+  height: 200px;
+  width: 400px;
+  border: black solid 3px;
+  margin-top: 3em;
+  margin-right: 1.5em;
+  margin-left: 1.5em;
+  background-color: #995db5;
+}
+
+.info {
+  margin-left: 1rem;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 3em;
+}

@@ -1,23 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./Form.css";
 
-const Form = ({ setSearch, setInput, input }) => {
+const Form = ({ setSearch, setInput, input, setLoading }) => {
   return (
     <div>
       <form
-        onSubmit={e => {
+        className="form"
+        onSubmit={(e) => {
+          if (input !== "") {
+            setLoading(true);
+          }
           setSearch(input);
           e.preventDefault();
           setInput("");
         }}
       >
         <input
+          className="input"
           type="text"
           value={input}
-          onChange={e => setInput(e.target.value)}
-          placeholder="Enter something"
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Enter repository name"
         />
-        <button type="submit">Search</button>
+        <button className="button" type="submit">
+          Search
+        </button>
       </form>
     </div>
   );
@@ -26,7 +34,7 @@ const Form = ({ setSearch, setInput, input }) => {
 Form.propTypes = {
   setSearch: PropTypes.func,
   setInput: PropTypes.func,
-  input: PropTypes.string
+  input: PropTypes.string,
 };
 
 export default Form;

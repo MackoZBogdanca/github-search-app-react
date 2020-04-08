@@ -1,16 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./Repositories.css";
 
-const Repositories = ({ repositories }) => {
+const Repositories = ({ repositories, loading }) => {
+  if (loading) return <h1 className="loading">Loading...</h1>;
+
   return (
-    <div>
-      <ul>
-        {repositories.map(repository => (
-          <li key={repository.id}>
-            <h1>{repository.name}</h1>
-            <p>{repository.created_at}</p>
-            <p>{repository.homepage}</p>
-            <p>{repository.watchers} views</p>
+    <div className="results">
+      <ul className="elements">
+        {repositories.map((repository) => (
+          <li className="item" key={repository.id}>
+            <h1 className="info">{repository.name}</h1>
+            <p className="info">Created at: {repository.created_at}</p>
+            <p className="info">{repository.homepage}</p>
+            <p className="info">{repository.watchers} stars</p>
           </li>
         ))}
       </ul>
@@ -19,7 +22,7 @@ const Repositories = ({ repositories }) => {
 };
 
 Repositories.propTypes = {
-  repositories: PropTypes.array
+  repositories: PropTypes.array,
 };
 
 export default Repositories;

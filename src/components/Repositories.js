@@ -10,7 +10,7 @@ const Repositories = ({ repositories, loading }) => {
       <ul className="elements">
         {repositories.map((repository) => (
           <li className="item" key={repository.id}>
-            <h1 className="info">{repository.name}</h1>
+            <h1 className="info info-name">{repository.name}</h1>
             <p className="info">Created at: {repository.created_at}</p>
             <p className="info">{repository.homepage}</p>
             <p className="info">{repository.watchers} stars</p>
